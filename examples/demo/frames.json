@@ -1,0 +1,645 @@
+{
+  "notice": "Scripted CLI reproduction, not an Agent recording. Original fictional story.",
+  "frames": [
+    {
+      "story": {
+        "id": "last-train",
+        "title": "末班地铁：第七位乘客",
+        "tone": "都市轻悬疑，克制、温暖，允许轻微幽默",
+        "goal": "弄清第七人的去向，并决定如何处理那段声音。"
+      },
+      "role": {
+        "id": "passenger",
+        "label": "夜归乘客"
+      },
+      "opening": "23:17，末班地铁停在一座虚构的无名站。客流屏显示7人，你却只数到6个身影。广播第三次响起同一句话：“别把这句话带出车厢。”到下一站前，你还剩8格调查时间。",
+      "revision": 0,
+      "status": "playing",
+      "remaining": 8,
+      "initial_budget": 8,
+      "variables": [
+        {
+          "id": "trust",
+          "label": "列车员信任（剧情数值）",
+          "value": 1,
+          "min": 0,
+          "max": 3
+        }
+      ],
+      "known_facts": [
+        {
+          "id": "f-screen",
+          "text": "屏幕显示7人；座舱内能看见6个身影。屏幕数字的口径尚不清楚。",
+          "kind": "observation",
+          "source": "原创虚构剧本"
+        },
+        {
+          "id": "f-loop",
+          "text": "广播重复“别把这句话带出车厢”。只知道听到了这句话，尚不清楚语境。",
+          "kind": "observation",
+          "source": "原创虚构剧本"
+        }
+      ],
+      "journal": [],
+      "last_outcome": "23:17，末班地铁停在一座虚构的无名站。客流屏显示7人，你却只数到6个身影。广播第三次响起同一句话：“别把这句话带出车厢。”到下一站前，你还剩8格调查时间。",
+      "choices": [
+        {
+          "id": "read-screen",
+          "label": "查看客流屏的小字",
+          "cost": 1
+        },
+        {
+          "id": "compare-audio",
+          "label": "安静比对两轮广播",
+          "cost": 2
+        },
+        {
+          "id": "ask-attendant",
+          "label": "向列车员询问随车人员",
+          "cost": 1
+        },
+        {
+          "id": "read-work-note",
+          "label": "查看公开展示的随车作业单",
+          "cost": 1
+        },
+        {
+          "id": "archive",
+          "label": "先不下结论，保存目前的记录",
+          "cost": 0
+        }
+      ],
+      "ending": null,
+      "save_sha256": "dc916287c88b14fe87ab0fe1139f05b1d1be7547e89924dc895ea84bf53d2ab4"
+    },
+    {
+      "story": {
+        "id": "last-train",
+        "title": "末班地铁：第七位乘客",
+        "tone": "都市轻悬疑，克制、温暖，允许轻微幽默",
+        "goal": "弄清第七人的去向，并决定如何处理那段声音。"
+      },
+      "role": {
+        "id": "passenger",
+        "label": "夜归乘客"
+      },
+      "opening": "23:17，末班地铁停在一座虚构的无名站。客流屏显示7人，你却只数到6个身影。广播第三次响起同一句话：“别把这句话带出车厢。”到下一站前，你还剩8格调查时间。",
+      "revision": 1,
+      "status": "playing",
+      "remaining": 7,
+      "initial_budget": 8,
+      "variables": [
+        {
+          "id": "trust",
+          "label": "列车员信任（剧情数值）",
+          "value": 1,
+          "min": 0,
+          "max": 3
+        }
+      ],
+      "known_facts": [
+        {
+          "id": "f-screen",
+          "text": "屏幕显示7人；座舱内能看见6个身影。屏幕数字的口径尚不清楚。",
+          "kind": "observation",
+          "source": "原创虚构剧本"
+        },
+        {
+          "id": "f-loop",
+          "text": "广播重复“别把这句话带出车厢”。只知道听到了这句话，尚不清楚语境。",
+          "kind": "observation",
+          "source": "原创虚构剧本"
+        },
+        {
+          "id": "f-count-label",
+          "text": "屏幕下方小字注明：本车统计包含在岗工作人员。",
+          "kind": "observation",
+          "source": "原创虚构剧本"
+        }
+      ],
+      "journal": [
+        {
+          "action_id": "read-screen",
+          "label": "查看客流屏的小字",
+          "outcome": "你走近屏幕。数字7下方有一行很小的统计说明。",
+          "revealed": [
+            "f-count-label"
+          ],
+          "remaining": 7
+        }
+      ],
+      "last_outcome": "你走近屏幕。数字7下方有一行很小的统计说明。",
+      "choices": [
+        {
+          "id": "compare-audio",
+          "label": "安静比对两轮广播",
+          "cost": 2
+        },
+        {
+          "id": "ask-attendant",
+          "label": "向列车员询问随车人员",
+          "cost": 1
+        },
+        {
+          "id": "read-work-note",
+          "label": "查看公开展示的随车作业单",
+          "cost": 1
+        },
+        {
+          "id": "archive",
+          "label": "先不下结论，保存目前的记录",
+          "cost": 0
+        }
+      ],
+      "ending": null,
+      "save_sha256": "14c987b0edfe065c7e16d974eb007f6be6a98802ba527877c4c2558c53d08853",
+      "replayed_event": false
+    },
+    {
+      "story": {
+        "id": "last-train",
+        "title": "末班地铁：第七位乘客",
+        "tone": "都市轻悬疑，克制、温暖，允许轻微幽默",
+        "goal": "弄清第七人的去向，并决定如何处理那段声音。"
+      },
+      "role": {
+        "id": "passenger",
+        "label": "夜归乘客"
+      },
+      "opening": "23:17，末班地铁停在一座虚构的无名站。客流屏显示7人，你却只数到6个身影。广播第三次响起同一句话：“别把这句话带出车厢。”到下一站前，你还剩8格调查时间。",
+      "revision": 2,
+      "status": "playing",
+      "remaining": 5,
+      "initial_budget": 8,
+      "variables": [
+        {
+          "id": "trust",
+          "label": "列车员信任（剧情数值）",
+          "value": 1,
+          "min": 0,
+          "max": 3
+        }
+      ],
+      "known_facts": [
+        {
+          "id": "f-screen",
+          "text": "屏幕显示7人；座舱内能看见6个身影。屏幕数字的口径尚不清楚。",
+          "kind": "observation",
+          "source": "原创虚构剧本"
+        },
+        {
+          "id": "f-loop",
+          "text": "广播重复“别把这句话带出车厢”。只知道听到了这句话，尚不清楚语境。",
+          "kind": "observation",
+          "source": "原创虚构剧本"
+        },
+        {
+          "id": "f-count-label",
+          "text": "屏幕下方小字注明：本车统计包含在岗工作人员。",
+          "kind": "observation",
+          "source": "原创虚构剧本"
+        },
+        {
+          "id": "f-cut",
+          "text": "两轮声音在同一处气口截断，重复长度相同；这支持“剪辑片段在循环”的判断。",
+          "kind": "inference",
+          "source": "声音比对 / 原创虚构"
+        }
+      ],
+      "journal": [
+        {
+          "action_id": "read-screen",
+          "label": "查看客流屏的小字",
+          "outcome": "你走近屏幕。数字7下方有一行很小的统计说明。",
+          "revealed": [
+            "f-count-label"
+          ],
+          "remaining": 7
+        },
+        {
+          "action_id": "compare-audio",
+          "label": "安静比对两轮广播",
+          "outcome": "你没有外放或转发，只比对广播本身。每轮声音都在同一处气口戛然而止。",
+          "revealed": [
+            "f-cut"
+          ],
+          "remaining": 5
+        }
+      ],
+      "last_outcome": "你没有外放或转发，只比对广播本身。每轮声音都在同一处气口戛然而止。",
+      "choices": [
+        {
+          "id": "ask-attendant",
+          "label": "向列车员询问随车人员",
+          "cost": 1
+        },
+        {
+          "id": "read-work-note",
+          "label": "查看公开展示的随车作业单",
+          "cost": 1
+        },
+        {
+          "id": "check-label",
+          "label": "请列车员协助检查失物袋的标签",
+          "cost": 1
+        },
+        {
+          "id": "private-check",
+          "label": "把剪辑特征私下告诉列车员，请他核实",
+          "cost": 1
+        },
+        {
+          "id": "broadcast",
+          "label": "公开复述并播放这段片段，向全车征询线索",
+          "cost": 1
+        },
+        {
+          "id": "archive",
+          "label": "先不下结论，保存目前的记录",
+          "cost": 0
+        }
+      ],
+      "ending": null,
+      "save_sha256": "47181e1068f2d6b3257535def2f8575877d6017fbc3c9b1e469e0acef32adc3f",
+      "replayed_event": false
+    },
+    {
+      "story": {
+        "id": "last-train",
+        "title": "末班地铁：第七位乘客",
+        "tone": "都市轻悬疑，克制、温暖，允许轻微幽默",
+        "goal": "弄清第七人的去向，并决定如何处理那段声音。"
+      },
+      "role": {
+        "id": "passenger",
+        "label": "夜归乘客"
+      },
+      "opening": "23:17，末班地铁停在一座虚构的无名站。客流屏显示7人，你却只数到6个身影。广播第三次响起同一句话：“别把这句话带出车厢。”到下一站前，你还剩8格调查时间。",
+      "revision": 3,
+      "status": "playing",
+      "remaining": 4,
+      "initial_budget": 8,
+      "variables": [
+        {
+          "id": "trust",
+          "label": "列车员信任（剧情数值）",
+          "value": 1,
+          "min": 0,
+          "max": 3
+        }
+      ],
+      "known_facts": [
+        {
+          "id": "f-screen",
+          "text": "屏幕显示7人；座舱内能看见6个身影。屏幕数字的口径尚不清楚。",
+          "kind": "observation",
+          "source": "原创虚构剧本"
+        },
+        {
+          "id": "f-loop",
+          "text": "广播重复“别把这句话带出车厢”。只知道听到了这句话，尚不清楚语境。",
+          "kind": "observation",
+          "source": "原创虚构剧本"
+        },
+        {
+          "id": "f-count-label",
+          "text": "屏幕下方小字注明：本车统计包含在岗工作人员。",
+          "kind": "observation",
+          "source": "原创虚构剧本"
+        },
+        {
+          "id": "f-cut",
+          "text": "两轮声音在同一处气口截断，重复长度相同；这支持“剪辑片段在循环”的判断。",
+          "kind": "inference",
+          "source": "声音比对 / 原创虚构"
+        },
+        {
+          "id": "f-card-label",
+          "text": "失物袋中的存储卡贴着“授权确认前勿外放”的标签。这里只检查标签，未读取其他人的录音。",
+          "kind": "observation",
+          "source": "原创虚构剧本"
+        }
+      ],
+      "journal": [
+        {
+          "action_id": "read-screen",
+          "label": "查看客流屏的小字",
+          "outcome": "你走近屏幕。数字7下方有一行很小的统计说明。",
+          "revealed": [
+            "f-count-label"
+          ],
+          "remaining": 7
+        },
+        {
+          "action_id": "compare-audio",
+          "label": "安静比对两轮广播",
+          "outcome": "你没有外放或转发，只比对广播本身。每轮声音都在同一处气口戛然而止。",
+          "revealed": [
+            "f-cut"
+          ],
+          "remaining": 5
+        },
+        {
+          "action_id": "check-label",
+          "label": "请列车员协助检查失物袋的标签",
+          "outcome": "列车员拿出失物袋，只向你展示存储卡的授权提示，没有播放内容。",
+          "revealed": [
+            "f-card-label"
+          ],
+          "remaining": 4
+        }
+      ],
+      "last_outcome": "列车员拿出失物袋，只向你展示存储卡的授权提示，没有播放内容。",
+      "choices": [
+        {
+          "id": "ask-attendant",
+          "label": "向列车员询问随车人员",
+          "cost": 1
+        },
+        {
+          "id": "read-work-note",
+          "label": "查看公开展示的随车作业单",
+          "cost": 1
+        },
+        {
+          "id": "private-check",
+          "label": "把剪辑特征私下告诉列车员，请他核实",
+          "cost": 1
+        },
+        {
+          "id": "broadcast",
+          "label": "公开复述并播放这段片段，向全车征询线索",
+          "cost": 1
+        },
+        {
+          "id": "archive",
+          "label": "先不下结论，保存目前的记录",
+          "cost": 0
+        }
+      ],
+      "ending": null,
+      "save_sha256": "f17b05542544fd78f604fdb8d49ab88832fc97fe4f07e7a679ec0932b8080a67",
+      "replayed_event": false
+    },
+    {
+      "story": {
+        "id": "last-train",
+        "title": "末班地铁：第七位乘客",
+        "tone": "都市轻悬疑，克制、温暖，允许轻微幽默",
+        "goal": "弄清第七人的去向，并决定如何处理那段声音。"
+      },
+      "role": {
+        "id": "passenger",
+        "label": "夜归乘客"
+      },
+      "opening": "23:17，末班地铁停在一座虚构的无名站。客流屏显示7人，你却只数到6个身影。广播第三次响起同一句话：“别把这句话带出车厢。”到下一站前，你还剩8格调查时间。",
+      "revision": 4,
+      "status": "playing",
+      "remaining": 3,
+      "initial_budget": 8,
+      "variables": [
+        {
+          "id": "trust",
+          "label": "列车员信任（剧情数值）",
+          "value": 2,
+          "min": 0,
+          "max": 3
+        }
+      ],
+      "known_facts": [
+        {
+          "id": "f-screen",
+          "text": "屏幕显示7人；座舱内能看见6个身影。屏幕数字的口径尚不清楚。",
+          "kind": "observation",
+          "source": "原创虚构剧本"
+        },
+        {
+          "id": "f-loop",
+          "text": "广播重复“别把这句话带出车厢”。只知道听到了这句话，尚不清楚语境。",
+          "kind": "observation",
+          "source": "原创虚构剧本"
+        },
+        {
+          "id": "f-count-label",
+          "text": "屏幕下方小字注明：本车统计包含在岗工作人员。",
+          "kind": "observation",
+          "source": "原创虚构剧本"
+        },
+        {
+          "id": "f-cut",
+          "text": "两轮声音在同一处气口截断，重复长度相同；这支持“剪辑片段在循环”的判断。",
+          "kind": "inference",
+          "source": "声音比对 / 原创虚构"
+        },
+        {
+          "id": "f-card-label",
+          "text": "失物袋中的存储卡贴着“授权确认前勿外放”的标签。这里只检查标签，未读取其他人的录音。",
+          "kind": "observation",
+          "source": "原创虚构剧本"
+        },
+        {
+          "id": "f-confirmed",
+          "text": "列车员通过内部通话核实：阿岚正在录音间整理资料，平安；你听到的是她测试设备时循环的片段。",
+          "kind": "testimony",
+          "source": "列车员内部核验后的转述 / 原创虚构"
+        }
+      ],
+      "journal": [
+        {
+          "action_id": "read-screen",
+          "label": "查看客流屏的小字",
+          "outcome": "你走近屏幕。数字7下方有一行很小的统计说明。",
+          "revealed": [
+            "f-count-label"
+          ],
+          "remaining": 7
+        },
+        {
+          "action_id": "compare-audio",
+          "label": "安静比对两轮广播",
+          "outcome": "你没有外放或转发，只比对广播本身。每轮声音都在同一处气口戛然而止。",
+          "revealed": [
+            "f-cut"
+          ],
+          "remaining": 5
+        },
+        {
+          "action_id": "check-label",
+          "label": "请列车员协助检查失物袋的标签",
+          "outcome": "列车员拿出失物袋，只向你展示存储卡的授权提示，没有播放内容。",
+          "revealed": [
+            "f-card-label"
+          ],
+          "remaining": 4
+        },
+        {
+          "action_id": "private-check",
+          "label": "把剪辑特征私下告诉列车员，请他核实",
+          "outcome": "你只描述了重复的剪辑特征。列车员通过内部通话核实后，向你说明采集员目前平安。",
+          "revealed": [
+            "f-confirmed"
+          ],
+          "remaining": 3
+        }
+      ],
+      "last_outcome": "你只描述了重复的剪辑特征。列车员通过内部通话核实后，向你说明采集员目前平安。",
+      "choices": [
+        {
+          "id": "ask-attendant",
+          "label": "向列车员询问随车人员",
+          "cost": 1
+        },
+        {
+          "id": "read-work-note",
+          "label": "查看公开展示的随车作业单",
+          "cost": 1
+        },
+        {
+          "id": "broadcast",
+          "label": "公开复述并播放这段片段，向全车征询线索",
+          "cost": 1
+        },
+        {
+          "id": "finish-private",
+          "label": "把存储卡封存交还，让这段声音留在原处",
+          "cost": 0
+        },
+        {
+          "id": "archive",
+          "label": "先不下结论，保存目前的记录",
+          "cost": 0
+        }
+      ],
+      "ending": null,
+      "save_sha256": "8f7c6d4d5b336449a17dd1035ee05a3a5eec69ce7a2136b746d0df6d32036351",
+      "replayed_event": false
+    },
+    {
+      "story": {
+        "id": "last-train",
+        "title": "末班地铁：第七位乘客",
+        "tone": "都市轻悬疑，克制、温暖，允许轻微幽默",
+        "goal": "弄清第七人的去向，并决定如何处理那段声音。"
+      },
+      "role": {
+        "id": "passenger",
+        "label": "夜归乘客"
+      },
+      "opening": "23:17，末班地铁停在一座虚构的无名站。客流屏显示7人，你却只数到6个身影。广播第三次响起同一句话：“别把这句话带出车厢。”到下一站前，你还剩8格调查时间。",
+      "revision": 5,
+      "status": "ended",
+      "remaining": 3,
+      "initial_budget": 8,
+      "variables": [
+        {
+          "id": "trust",
+          "label": "列车员信任（剧情数值）",
+          "value": 2,
+          "min": 0,
+          "max": 3
+        }
+      ],
+      "known_facts": [
+        {
+          "id": "f-screen",
+          "text": "屏幕显示7人；座舱内能看见6个身影。屏幕数字的口径尚不清楚。",
+          "kind": "observation",
+          "source": "原创虚构剧本"
+        },
+        {
+          "id": "f-loop",
+          "text": "广播重复“别把这句话带出车厢”。只知道听到了这句话，尚不清楚语境。",
+          "kind": "observation",
+          "source": "原创虚构剧本"
+        },
+        {
+          "id": "f-count-label",
+          "text": "屏幕下方小字注明：本车统计包含在岗工作人员。",
+          "kind": "observation",
+          "source": "原创虚构剧本"
+        },
+        {
+          "id": "f-cut",
+          "text": "两轮声音在同一处气口截断，重复长度相同；这支持“剪辑片段在循环”的判断。",
+          "kind": "inference",
+          "source": "声音比对 / 原创虚构"
+        },
+        {
+          "id": "f-card-label",
+          "text": "失物袋中的存储卡贴着“授权确认前勿外放”的标签。这里只检查标签，未读取其他人的录音。",
+          "kind": "observation",
+          "source": "原创虚构剧本"
+        },
+        {
+          "id": "f-confirmed",
+          "text": "列车员通过内部通话核实：阿岚正在录音间整理资料，平安；你听到的是她测试设备时循环的片段。",
+          "kind": "testimony",
+          "source": "列车员内部核验后的转述 / 原创虚构"
+        },
+        {
+          "id": "f-truth",
+          "text": "第七人阿岚是随车声景采集员，正在录音间工作；在岗人员被计入屏幕人数。循环声音来自一段尚未获准公开的录音，既不是实时求救，也没有人凭空消失。",
+          "kind": "canon",
+          "source": "结局揭示 / 原创虚构"
+        }
+      ],
+      "journal": [
+        {
+          "action_id": "read-screen",
+          "label": "查看客流屏的小字",
+          "outcome": "你走近屏幕。数字7下方有一行很小的统计说明。",
+          "revealed": [
+            "f-count-label"
+          ],
+          "remaining": 7
+        },
+        {
+          "action_id": "compare-audio",
+          "label": "安静比对两轮广播",
+          "outcome": "你没有外放或转发，只比对广播本身。每轮声音都在同一处气口戛然而止。",
+          "revealed": [
+            "f-cut"
+          ],
+          "remaining": 5
+        },
+        {
+          "action_id": "check-label",
+          "label": "请列车员协助检查失物袋的标签",
+          "outcome": "列车员拿出失物袋，只向你展示存储卡的授权提示，没有播放内容。",
+          "revealed": [
+            "f-card-label"
+          ],
+          "remaining": 4
+        },
+        {
+          "action_id": "private-check",
+          "label": "把剪辑特征私下告诉列车员，请他核实",
+          "outcome": "你只描述了重复的剪辑特征。列车员通过内部通话核实后，向你说明采集员目前平安。",
+          "revealed": [
+            "f-confirmed"
+          ],
+          "remaining": 3
+        },
+        {
+          "action_id": "finish-private",
+          "label": "把存储卡封存交还，让这段声音留在原处",
+          "outcome": "你把存储卡交回列车员，选择保留原声的边界。",
+          "revealed": [
+            "f-truth"
+          ],
+          "remaining": 3
+        }
+      ],
+      "last_outcome": "你把存储卡交回列车员，选择保留原声的边界。",
+      "choices": [],
+      "ending": {
+        "id": "quiet-return",
+        "title": "结局 · 原声留在这里",
+        "text": "第七人一直在车上，只是不在乘客座舱。那句“别带出车厢”是一次授权练习的片段。你查清了人数，也把一份尚未公开的声音交还给了它的主人。",
+        "classification": "resolved"
+      },
+      "save_sha256": "dde2487c9d84a37870f5d9404f0b2892bfe07565a043105c807a902011264b73",
+      "replayed_event": false
+    }
+  ]
+}

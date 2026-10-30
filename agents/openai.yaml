@@ -1,0 +1,4 @@
+interface:
+  display_name: "StoryArcade"
+  short_description: "Play, save and test interactive mysteries in your Agent"
+  default_prompt: "Use $story-arcade to host a short mystery, track my clues, and save where I stop."

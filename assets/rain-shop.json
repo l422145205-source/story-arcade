@@ -1,0 +1,175 @@
+{
+  "format": "story-arcade/1",
+  "id": "rain-shop",
+  "title": "雨夜便利店：第十三杯咖啡",
+  "opening": "雨夜，便利店准备打烊。收银台放着13杯咖啡，电子订单上却只有12杯。店员把最后一杯推到你面前：“这杯有个名字，但不是你的。”你还有3格时间决定怎么处理。",
+  "goal": "弄清多出的咖啡属于谁，再决定它要留给谁。",
+  "tone": "生活悬疑、温暖，短局",
+  "budget": 3,
+  "content_notes": [
+    "原创虚构；无恐怖或血腥。"
+  ],
+  "roles": [
+    {
+      "id": "customer",
+      "label": "避雨的顾客",
+      "opening": "雨夜，便利店准备打烊。收银台放着13杯咖啡，电子订单上却只有12杯。店员把最后一杯推到你面前：“这杯有个名字，但不是你的。”你还有3格时间决定怎么处理。",
+      "initial_facts": [
+        "s-counter"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "s-counter",
+      "text": "台面13杯，电子订单显示12杯；目前还不能认定多做或少记。",
+      "kind": "observation",
+      "source": "原创虚构剧本"
+    },
+    {
+      "id": "s-receipt",
+      "text": "第13杯有一张单独的纸质预付款小票，购买人为匿名客人。",
+      "kind": "observation",
+      "source": "原创虚构剧本"
+    },
+    {
+      "id": "s-note",
+      "text": "杯套手写：“给下一位还在赶路的人。”没有收件人姓名。",
+      "kind": "observation",
+      "source": "原创虚构剧本"
+    },
+    {
+      "id": "s-clerk",
+      "text": "店员说：“那个人付过款，说如果雨不停，就留给一位晚归的人。”",
+      "kind": "testimony",
+      "source": "店员口述 / 原创虚构"
+    },
+    {
+      "id": "s-truth",
+      "text": "第13杯是匿名预付的赠饮，电子订单只统计另一笔团购。",
+      "kind": "canon",
+      "source": "结局揭示 / 原创虚构"
+    }
+  ],
+  "npcs": [
+    {
+      "id": "clerk",
+      "name": "店员",
+      "persona": "疲惫但耐心，按当前线索回答。",
+      "initial_facts": [
+        "s-clerk"
+      ]
+    }
+  ],
+  "flags": {},
+  "variables": [],
+  "actions": [
+    {
+      "id": "read-receipt",
+      "label": "核对单独放在杯下的小票",
+      "cost": 1,
+      "outcome": "你看到一张已经实付的独立小票。",
+      "effects": {
+        "reveal": [
+          "s-receipt"
+        ]
+      }
+    },
+    {
+      "id": "read-sleeve",
+      "label": "看看杯套上的留言",
+      "cost": 1,
+      "outcome": "杯套上的字有一点被雨水晕开，但意思仍然清楚。",
+      "effects": {
+        "reveal": [
+          "s-note"
+        ]
+      }
+    },
+    {
+      "id": "ask-clerk",
+      "label": "问店员，这杯咖啡为什么单独放着",
+      "cost": 1,
+      "outcome": "店员指了指门外仍在下雨的街道。",
+      "effects": {
+        "reveal": [
+          "s-clerk"
+        ]
+      }
+    },
+    {
+      "id": "leave-coffee",
+      "label": "把咖啡留给下一位赶路的人",
+      "cost": 0,
+      "outcome": "你把杯子放回保温处，提醒店员继续保留这份匿名心意。",
+      "effects": {
+        "reveal": []
+      },
+      "ending": "pay-forward"
+    },
+    {
+      "id": "take-coffee",
+      "label": "收下赠饮，留下一句谢谢",
+      "cost": 0,
+      "outcome": "你接过咖啡，在杯套背面留下一句给匿名赠饮者的谢谢。",
+      "effects": {
+        "reveal": []
+      },
+      "ending": "warm-road"
+    },
+    {
+      "id": "pause",
+      "label": "暂不领取，保存现在的线索",
+      "cost": 0,
+      "outcome": "你把杯子留在原处，没有替未知的赠饮决定去向。",
+      "effects": {
+        "reveal": []
+      },
+      "ending": "unopened"
+    }
+  ],
+  "endings": [
+    {
+      "id": "pay-forward",
+      "title": "结局 · 留一盏小灯",
+      "classification": "resolved",
+      "requires": {
+        "all": [
+          "s-receipt",
+          "s-note"
+        ]
+      },
+      "reveal": [
+        "s-truth"
+      ],
+      "text": "多出来的是一份单独付款的善意。你决定让它继续等待下一位晚归的人。"
+    },
+    {
+      "id": "warm-road",
+      "title": "结局 · 雨里的一点热",
+      "classification": "resolved",
+      "requires": {
+        "all": [
+          "s-receipt",
+          "s-note"
+        ]
+      },
+      "reveal": [
+        "s-truth"
+      ],
+      "text": "你也是那个还在赶路的人。咖啡属于一份没有指定姓名的赠饮，你收下它，并认真留下了谢谢。"
+    },
+    {
+      "id": "unopened",
+      "title": "结局 · 先留在这里",
+      "classification": "open",
+      "requires": {},
+      "reveal": [],
+      "text": "雨还没停。你保留了已知的记录，暂时没有领取这杯咖啡。"
+    }
+  ],
+  "author": {
+    "truth": "第13杯是单独付款的匿名赠饮；12杯属于另一笔团购。",
+    "design_notes": "没有唯一道德正确结局。核对证据后，领取或转赠是不同但都成立的选择。可用来试写另一套原创故事。"
+  }
+}

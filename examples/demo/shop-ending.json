@@ -1,0 +1,83 @@
+{
+  "story": {
+    "id": "rain-shop",
+    "title": "雨夜便利店：第十三杯咖啡",
+    "tone": "生活悬疑、温暖，短局",
+    "goal": "弄清多出的咖啡属于谁，再决定它要留给谁。"
+  },
+  "role": {
+    "id": "customer",
+    "label": "避雨的顾客"
+  },
+  "opening": "雨夜，便利店准备打烊。收银台放着13杯咖啡，电子订单上却只有12杯。店员把最后一杯推到你面前：“这杯有个名字，但不是你的。”你还有3格时间决定怎么处理。",
+  "revision": 3,
+  "status": "ended",
+  "remaining": 1,
+  "initial_budget": 3,
+  "variables": [],
+  "known_facts": [
+    {
+      "id": "s-counter",
+      "text": "台面13杯，电子订单显示12杯；目前还不能认定多做或少记。",
+      "kind": "observation",
+      "source": "原创虚构剧本"
+    },
+    {
+      "id": "s-receipt",
+      "text": "第13杯有一张单独的纸质预付款小票，购买人为匿名客人。",
+      "kind": "observation",
+      "source": "原创虚构剧本"
+    },
+    {
+      "id": "s-note",
+      "text": "杯套手写：“给下一位还在赶路的人。”没有收件人姓名。",
+      "kind": "observation",
+      "source": "原创虚构剧本"
+    },
+    {
+      "id": "s-truth",
+      "text": "第13杯是匿名预付的赠饮，电子订单只统计另一笔团购。",
+      "kind": "canon",
+      "source": "结局揭示 / 原创虚构"
+    }
+  ],
+  "journal": [
+    {
+      "action_id": "read-receipt",
+      "label": "核对单独放在杯下的小票",
+      "outcome": "你看到一张已经实付的独立小票。",
+      "revealed": [
+        "s-receipt"
+      ],
+      "remaining": 2
+    },
+    {
+      "action_id": "read-sleeve",
+      "label": "看看杯套上的留言",
+      "outcome": "杯套上的字有一点被雨水晕开，但意思仍然清楚。",
+      "revealed": [
+        "s-note"
+      ],
+      "remaining": 1
+    },
+    {
+      "action_id": "leave-coffee",
+      "label": "把咖啡留给下一位赶路的人",
+      "outcome": "你把杯子放回保温处，提醒店员继续保留这份匿名心意。",
+      "revealed": [
+        "s-truth"
+      ],
+      "remaining": 1
+    }
+  ],
+  "last_outcome": "你把杯子放回保温处，提醒店员继续保留这份匿名心意。",
+  "choices": [],
+  "ending": {
+    "id": "pay-forward",
+    "title": "结局 · 留一盏小灯",
+    "text": "多出来的是一份单独付款的善意。你决定让它继续等待下一位晚归的人。",
+    "classification": "resolved"
+  },
+  "save_sha256": "a3c7bad9ff7394a7733edff66eeebda2955e58e6cc36d40882b07e24bf3942e3",
+  "replayed_event": false
+}

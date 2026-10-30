@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.venv/
+work/
+.story-arcade/
+*.arcade.lock
+.arcade-*.tmp

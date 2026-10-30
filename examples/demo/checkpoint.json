@@ -1,0 +1,108 @@
+{
+  "story": {
+    "id": "last-train",
+    "title": "末班地铁：第七位乘客",
+    "tone": "都市轻悬疑，克制、温暖，允许轻微幽默",
+    "goal": "弄清第七人的去向，并决定如何处理那段声音。"
+  },
+  "role": {
+    "id": "passenger",
+    "label": "夜归乘客"
+  },
+  "opening": "23:17，末班地铁停在一座虚构的无名站。客流屏显示7人，你却只数到6个身影。广播第三次响起同一句话：“别把这句话带出车厢。”到下一站前，你还剩8格调查时间。",
+  "revision": 2,
+  "status": "playing",
+  "remaining": 5,
+  "initial_budget": 8,
+  "variables": [
+    {
+      "id": "trust",
+      "label": "列车员信任（剧情数值）",
+      "value": 1,
+      "min": 0,
+      "max": 3
+    }
+  ],
+  "known_facts": [
+    {
+      "id": "f-screen",
+      "text": "屏幕显示7人；座舱内能看见6个身影。屏幕数字的口径尚不清楚。",
+      "kind": "observation",
+      "source": "原创虚构剧本"
+    },
+    {
+      "id": "f-loop",
+      "text": "广播重复“别把这句话带出车厢”。只知道听到了这句话，尚不清楚语境。",
+      "kind": "observation",
+      "source": "原创虚构剧本"
+    },
+    {
+      "id": "f-count-label",
+      "text": "屏幕下方小字注明：本车统计包含在岗工作人员。",
+      "kind": "observation",
+      "source": "原创虚构剧本"
+    },
+    {
+      "id": "f-cut",
+      "text": "两轮声音在同一处气口截断，重复长度相同；这支持“剪辑片段在循环”的判断。",
+      "kind": "inference",
+      "source": "声音比对 / 原创虚构"
+    }
+  ],
+  "journal": [
+    {
+      "action_id": "read-screen",
+      "label": "查看客流屏的小字",
+      "outcome": "你走近屏幕。数字7下方有一行很小的统计说明。",
+      "revealed": [
+        "f-count-label"
+      ],
+      "remaining": 7
+    },
+    {
+      "action_id": "compare-audio",
+      "label": "安静比对两轮广播",
+      "outcome": "你没有外放或转发，只比对广播本身。每轮声音都在同一处气口戛然而止。",
+      "revealed": [
+        "f-cut"
+      ],
+      "remaining": 5
+    }
+  ],
+  "last_outcome": "你没有外放或转发，只比对广播本身。每轮声音都在同一处气口戛然而止。",
+  "choices": [
+    {
+      "id": "ask-attendant",
+      "label": "向列车员询问随车人员",
+      "cost": 1
+    },
+    {
+      "id": "read-work-note",
+      "label": "查看公开展示的随车作业单",
+      "cost": 1
+    },
+    {
+      "id": "check-label",
+      "label": "请列车员协助检查失物袋的标签",
+      "cost": 1
+    },
+    {
+      "id": "private-check",
+      "label": "把剪辑特征私下告诉列车员，请他核实",
+      "cost": 1
+    },
+    {
+      "id": "broadcast",
+      "label": "公开复述并播放这段片段，向全车征询线索",
+      "cost": 1
+    },
+    {
+      "id": "archive",
+      "label": "先不下结论，保存目前的记录",
+      "cost": 0
+    }
+  ],
+  "ending": null,
+  "save_sha256": "47181e1068f2d6b3257535def2f8575877d6017fbc3c9b1e469e0acef32adc3f",
+  "replayed_event": false
+}

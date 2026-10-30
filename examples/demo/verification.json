@@ -1,0 +1,35 @@
+{
+  "basis": "Original fictional packs; actual scripted CLI calls, not an LLM benchmark or human playtest.",
+  "retry": {
+    "same_event_replayed": true,
+    "bytes_unchanged": true,
+    "revision": 2,
+    "remaining": 5
+  },
+  "relay": {
+    "same_revision": true,
+    "same_known_facts": true
+  },
+  "fork": {
+    "quiet_ending": "quiet-return",
+    "alternate_ending": "public-echo",
+    "original_ending_preserved": true
+  },
+  "audit": {
+    "last-train": {
+      "complete": true,
+      "role_states": {
+        "passenger": 100,
+        "volunteer": 176
+      },
+      "all_endings_observed": true
+    },
+    "rain-shop": {
+      "complete": true,
+      "role_states": {
+        "customer": 8
+      },
+      "all_endings_observed": true
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "format": "story-arcade/1",
+  "story_id": "last-train",
+  "story_sha256": "57b9fbacf3a600730a3400bbf037491b219ca60e68feeb24009caf1add1d55fa",
+  "role": "passenger",
+  "events": [
+    {
+      "id": "e1",
+      "action_id": "read-screen"
+    },
+    {
+      "id": "e2",
+      "action_id": "compare-audio"
+    }
+  ]
+}

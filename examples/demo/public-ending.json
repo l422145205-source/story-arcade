@@ -1,0 +1,142 @@
+{
+  "story": {
+    "id": "last-train",
+    "title": "末班地铁：第七位乘客",
+    "tone": "都市轻悬疑，克制、温暖，允许轻微幽默",
+    "goal": "弄清第七人的去向，并决定如何处理那段声音。"
+  },
+  "role": {
+    "id": "passenger",
+    "label": "夜归乘客"
+  },
+  "opening": "23:17，末班地铁停在一座虚构的无名站。客流屏显示7人，你却只数到6个身影。广播第三次响起同一句话：“别把这句话带出车厢。”到下一站前，你还剩8格调查时间。",
+  "revision": 6,
+  "status": "ended",
+  "remaining": 2,
+  "initial_budget": 8,
+  "variables": [
+    {
+      "id": "trust",
+      "label": "列车员信任（剧情数值）",
+      "value": 0,
+      "min": 0,
+      "max": 3
+    }
+  ],
+  "known_facts": [
+    {
+      "id": "f-screen",
+      "text": "屏幕显示7人；座舱内能看见6个身影。屏幕数字的口径尚不清楚。",
+      "kind": "observation",
+      "source": "原创虚构剧本"
+    },
+    {
+      "id": "f-loop",
+      "text": "广播重复“别把这句话带出车厢”。只知道听到了这句话，尚不清楚语境。",
+      "kind": "observation",
+      "source": "原创虚构剧本"
+    },
+    {
+      "id": "f-count-label",
+      "text": "屏幕下方小字注明：本车统计包含在岗工作人员。",
+      "kind": "observation",
+      "source": "原创虚构剧本"
+    },
+    {
+      "id": "f-cut",
+      "text": "两轮声音在同一处气口截断，重复长度相同；这支持“剪辑片段在循环”的判断。",
+      "kind": "inference",
+      "source": "声音比对 / 原创虚构"
+    },
+    {
+      "id": "f-roster",
+      "text": "列车员说：今晚有一名声景采集员阿岚随车，但还没有向你确认她的具体位置。",
+      "kind": "testimony",
+      "source": "列车员口述 / 原创虚构"
+    },
+    {
+      "id": "f-confirmed",
+      "text": "列车员通过内部通话核实：阿岚正在录音间整理资料，平安；你听到的是她测试设备时循环的片段。",
+      "kind": "testimony",
+      "source": "列车员内部核验后的转述 / 原创虚构"
+    },
+    {
+      "id": "f-broadcast",
+      "text": "片段已在车厢公开播放。一位旅客表示这段录音涉及自己，不希望继续外放。",
+      "kind": "observation",
+      "source": "原创虚构剧本"
+    },
+    {
+      "id": "f-truth",
+      "text": "第七人阿岚是随车声景采集员，正在录音间工作；在岗人员被计入屏幕人数。循环声音来自一段尚未获准公开的录音，既不是实时求救，也没有人凭空消失。",
+      "kind": "canon",
+      "source": "结局揭示 / 原创虚构"
+    }
+  ],
+  "journal": [
+    {
+      "action_id": "read-screen",
+      "label": "查看客流屏的小字",
+      "outcome": "你走近屏幕。数字7下方有一行很小的统计说明。",
+      "revealed": [
+        "f-count-label"
+      ],
+      "remaining": 7
+    },
+    {
+      "action_id": "compare-audio",
+      "label": "安静比对两轮广播",
+      "outcome": "你没有外放或转发，只比对广播本身。每轮声音都在同一处气口戛然而止。",
+      "revealed": [
+        "f-cut"
+      ],
+      "remaining": 5
+    },
+    {
+      "action_id": "broadcast",
+      "label": "公开复述并播放这段片段，向全车征询线索",
+      "outcome": "你选择公开传播片段。有人立即制止，列车员对你的处理方式变得戒备。",
+      "revealed": [
+        "f-broadcast"
+      ],
+      "remaining": 4
+    },
+    {
+      "action_id": "ask-attendant",
+      "label": "向列车员询问随车人员",
+      "outcome": "列车员先看了看作业名单：“今晚是有一位声景采集员随车。”",
+      "revealed": [
+        "f-roster"
+      ],
+      "remaining": 3
+    },
+    {
+      "action_id": "follow-up",
+      "label": "公开传播后，请列车员通过内部渠道核实",
+      "outcome": "你停止播放，请列车员核实人员情况。他确认阿岚平安，但录音的公开传播已经发生。",
+      "revealed": [
+        "f-confirmed"
+      ],
+      "remaining": 2
+    },
+    {
+      "action_id": "finish-public",
+      "label": "承认公开传播的后果，结束调查",
+      "outcome": "你停止传播并说明经过。人物下落已确认，公开播放的后果也不会被抹掉。",
+      "revealed": [
+        "f-truth"
+      ],
+      "remaining": 2
+    }
+  ],
+  "last_outcome": "你停止传播并说明经过。人物下落已确认，公开播放的后果也不会被抹掉。",
+  "choices": [],
+  "ending": {
+    "id": "public-echo",
+    "title": "结局 · 回声已经出发",
+    "text": "第七人没有失踪，片段也不是实时求救。你确认了真相，但曾经公开的录音无法因为结案而收回。车门打开前，你向受影响的人说明并致歉。",
+    "classification": "resolved"
+  },
+  "save_sha256": "c6cb9478d0edfcb6ca4ac46f6315d48d9557a6544addd737ad6dd8590289f64c",
+  "replayed_event": false
+}

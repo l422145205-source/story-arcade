@@ -1,0 +1,96 @@
+{
+  "last-train": {
+    "author_only": true,
+    "story_id": "last-train",
+    "complete": true,
+    "roles": [
+      {
+        "role": "passenger",
+        "complete": true,
+        "states_examined": 100,
+        "states_pending": 0,
+        "ending_routes": {
+          "open-file": [
+            "archive"
+          ],
+          "quiet-return": [
+            "read-screen",
+            "compare-audio",
+            "check-label",
+            "private-check",
+            "finish-private"
+          ],
+          "public-echo": [
+            "read-screen",
+            "compare-audio",
+            "private-check",
+            "broadcast",
+            "finish-public"
+          ]
+        },
+        "endings_not_observed": [],
+        "actions_not_observed": [],
+        "closing_only_states": 3
+      },
+      {
+        "role": "volunteer",
+        "complete": true,
+        "states_examined": 176,
+        "states_pending": 0,
+        "ending_routes": {
+          "open-file": [
+            "archive"
+          ],
+          "quiet-return": [
+            "read-screen",
+            "check-label",
+            "private-check",
+            "finish-private"
+          ],
+          "public-echo": [
+            "read-screen",
+            "private-check",
+            "broadcast",
+            "finish-public"
+          ]
+        },
+        "endings_not_observed": [],
+        "actions_not_observed": [],
+        "closing_only_states": 3
+      }
+    ],
+    "basis": "Exhaustive only when complete=true. Checks authored state transitions, not prose quality, real user enjoyment or LLM leakage resistance."
+  },
+  "rain-shop": {
+    "author_only": true,
+    "story_id": "rain-shop",
+    "complete": true,
+    "roles": [
+      {
+        "role": "customer",
+        "complete": true,
+        "states_examined": 8,
+        "states_pending": 0,
+        "ending_routes": {
+          "unopened": [
+            "pause"
+          ],
+          "pay-forward": [
+            "read-receipt",
+            "read-sleeve",
+            "leave-coffee"
+          ],
+          "warm-road": [
+            "read-receipt",
+            "read-sleeve",
+            "take-coffee"
+          ]
+        },
+        "endings_not_observed": [],
+        "actions_not_observed": [],
+        "closing_only_states": 1
+      }
+    ],
+    "basis": "Exhaustive only when complete=true. Checks authored state transitions, not prose quality, real user enjoyment or LLM leakage resistance."
+  }
+}
